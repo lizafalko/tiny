@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ColorMonitor from './ColorMonitor';
+import ColorMonitor from '../ColorMonitor/ColorMonitor';
 
 class App extends Component {
   constructor(props) {
