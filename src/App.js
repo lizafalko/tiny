@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ColorMonitor from './ColorMonitor';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.updateState = this.updateState.bind(this)
+  }
+
+  state = {
+    pik: 'yellow'
+  }
+
+  updateState = function (e) {
+    this.setState({
+      pik: e.target.value
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ColorMonitor color={this.state.pik} />
+        <input onChange={this.updateState} />
       </div>
     );
   }
